@@ -146,12 +146,12 @@
     
     CGFloat eventSize = _shapeLayer.frame.size.height/6.0;
     _eventIndicator.frame = CGRectMake(
-                                       38,
-                                       4,
-                                       6,
-                                       6
+                                       self.preferredAppointmentOffset.x,
+                                       self.preferredAppointmentOffset.y,
+                                       self.preferredAppointmentSize.width,
+                                       self.preferredAppointmentSize.height
                                       );
-    
+    //
 }
 
 - (void)prepareForReuse

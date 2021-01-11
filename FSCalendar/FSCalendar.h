@@ -235,6 +235,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (CGFloat)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance borderRadiusForDate:(NSDate *)date;
 
+
+- (CGPoint)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance appointmentOffsetForDate:(NSDate *)date;
+
+- (CGSize)calendar:(FSCalendar *)calendar appearance:(FSCalendarAppearance *)appearance appointmentSizeForDate:(NSDate *)date;
+
 @end
 
 #pragma mark - Primary
