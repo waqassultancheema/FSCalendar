@@ -122,7 +122,7 @@
     } else {
         _titleLabel.frame = CGRectMake(
                                        self.preferredTitleOffset.x,
-                                       self.preferredTitleOffset.y,
+                                       2,
                                        self.contentView.fs_width,
                                        floor(self.contentView.fs_height*5.0/6.0)
                                        );
@@ -130,13 +130,13 @@
     
     _imageView.frame = CGRectMake(self.preferredImageOffset.x, self.preferredImageOffset.y, self.contentView.fs_width, self.contentView.fs_height);
     
-    CGFloat titleHeight = self.bounds.size.height*5.0/6.0;
-    CGFloat diameter = MIN(self.bounds.size.height*5.0/6.0,self.bounds.size.width);
+    CGFloat titleHeight = self.bounds.size.height;
+    CGFloat diameter = MIN(self.bounds.size.height,self.bounds.size.width);
     diameter = diameter > FSCalendarStandardCellDiameter ? (diameter - (diameter-FSCalendarStandardCellDiameter)*0.5) : diameter;
     _shapeLayer.frame = CGRectMake((self.bounds.size.width-diameter)/2,
                                    (titleHeight-diameter)/2,
-                                   diameter,
-                                   diameter);
+                                   36,
+                                   36);
     
     CGPathRef path = [UIBezierPath bezierPathWithRoundedRect:_shapeLayer.bounds
                                                 cornerRadius:3].CGPath;
@@ -146,10 +146,10 @@
     
     CGFloat eventSize = _shapeLayer.frame.size.height/6.0;
     _eventIndicator.frame = CGRectMake(
-                                       self.preferredEventOffset.x,
-                                       CGRectGetMaxY(_shapeLayer.frame)+eventSize*0.17+self.preferredEventOffset.y,
-                                       self.fs_width,
-                                       eventSize*0.83
+                                       38,
+                                       4,
+                                       6,
+                                       6
                                       );
     
 }
