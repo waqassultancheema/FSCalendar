@@ -269,6 +269,9 @@ IB_DESIGNABLE
  */
 @property (strong, nonatomic) NSDate *currentPage;
 
+@property (strong, nonatomic) NSDictionary<NSString *,NSString *> *localizedMonths;
+
+
 /**
  * The locale of month and weekday symbols. Change it to display them in your own language.
  *

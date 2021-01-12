@@ -168,10 +168,19 @@
                 } else {
                     NSDate *date = [self.calendar.gregorian dateByAddingUnit:NSCalendarUnitMonth value:indexPath.item-1 toDate:self.calendar.minimumDate options:0];
                     text = [_calendar.formatter stringFromDate:date];
+                    
                 }
             } else {
+                
+
                 NSDate *date = [self.calendar.gregorian dateByAddingUnit:NSCalendarUnitMonth value:indexPath.item toDate:self.calendar.minimumDate options:0];
-                text = [_calendar.formatter stringFromDate:date];
+                _calendar.formatter.dateFormat = @"MMMM";
+                //text =
+                text = [_calendar.localizedMonths valueForKey:[_calendar.formatter stringFromDate:date]];
+                _calendar.formatter.dateFormat = @"YYYY";
+                text = [NSString stringWithFormat:@"%@ %@", text, [_calendar.formatter stringFromDate:date]];
+
+
             }
             break;
         }

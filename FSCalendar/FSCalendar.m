@@ -152,7 +152,7 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
     _gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     _formatter = [[NSDateFormatter alloc] init];
     _formatter.dateFormat = @"yyyy-MM-dd";
-    _locale = [NSLocale currentLocale];
+    _locale = nil;
     _timeZone = [NSTimeZone defaultTimeZone];
     _firstWeekday = 1;
     [self invalidateDateTools];
